@@ -22,31 +22,29 @@ class ViewController: UIViewController {
         webView.load(urlRequest)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            if !self.webView.isLoading {
-                self.webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
-                    do {
-                        let doc: Document = try! SwiftSoup.parse(html as! String)
-                            let elements = try doc.getElementsByClass("ng-binding ng-scope")
-                            for element in elements {
-                                let potentialPhoneNumber = try element.html()
-                                if potentialPhoneNumber.hasPrefix("+") {
-                                    print("found phone number: \(potentialPhoneNumber)")
-                                    let alertController = UIAlertController(title: "Watch Out!", message: "I just learned your phone number \(potentialPhoneNumber) without asking for permission!", preferredStyle: .alert)
-                                    let ok = UIAlertAction(title: "Learn More", style: .cancel, handler: { (_) in
-                                        self.performSegue(withIdentifier: "showAbout", sender: self)
-                                    })
-                                    alertController.addAction(ok)
-                                    self.present(alertController, animated: true)
-                                    timer.invalidate()
-                                }
-                            }
-                    } catch Exception.Error(_, let message) {
-                        print(message)
-                    } catch {
-                        print("error")
+            self.webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
+                do {
+                    let doc: Document = try! SwiftSoup.parse(html as! String)
+                    let elements = try doc.getElementsByClass("ng-binding ng-scope")
+                    for element in elements {
+                        let potentialPhoneNumber = try element.html()
+                        if potentialPhoneNumber.hasPrefix("+") {
+                            print("found phone number: \(potentialPhoneNumber)")
+                            let alertController = UIAlertController(title: "Watch Out!", message: "I just learned your phone number \(potentialPhoneNumber) without asking for permission!", preferredStyle: .alert)
+                            let ok = UIAlertAction(title: "Learn More", style: .cancel, handler: { (_) in
+                                self.performSegue(withIdentifier: "showAbout", sender: self)
+                            })
+                            alertController.addAction(ok)
+                            self.present(alertController, animated: true)
+                            timer.invalidate()
+                        }
                     }
-                })
-            }
+                } catch Exception.Error(_, let message) {
+                    print(message)
+                } catch {
+                    print("error")
+                }
+            })
         }
     }
 }
