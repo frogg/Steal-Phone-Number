@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             if !self.webView.isLoading {
                 self.webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
-                    //                    print(html!)
                     do {
                         let doc: Document = try! SwiftSoup.parse(html as! String)
                             let elements = try doc.getElementsByClass("ng-binding ng-scope")
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
                                 let potentialPhoneNumber = try element.html()
                                 if potentialPhoneNumber.hasPrefix("+") {
                                     print("found phone number: \(potentialPhoneNumber)")
-                                    let alertController = UIAlertController(title: "Steal Phone Number", message: "This is an example of how to access the phone number without asking the user. Your phone number is: \(potentialPhoneNumber)", preferredStyle: .alert)
+                                    let alertController = UIAlertController(title: "Watch Out!", message: "I just learned your phone number \(potentialPhoneNumber) without asking for permission!", preferredStyle: .alert)
                                     let ok = UIAlertAction(title: "Learn More", style: .cancel, handler: { (_) in
                                         self.performSegue(withIdentifier: "showAbout", sender: self)
                                     })
@@ -41,8 +40,6 @@ class ViewController: UIViewController {
                                     timer.invalidate()
                                 }
                             }
-                        
-                        
                     } catch Exception.Error(_, let message) {
                         print(message)
                     } catch {
