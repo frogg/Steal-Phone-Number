@@ -18,3 +18,6 @@ Right now, this is only implemented with my service provider (Deutsche Telekom, 
 Telekom is my phone provider so they know who I am when visiting their websites. This is why they automatically "sign me in". My script just grabs the information form there using a hidden WKWebView from a website like this (when loaded from within Telekom's cellular network): https://cap.telekom.de/auth?module=substore&subtempid=11110438&wt_mc=im_co_1842_0001_0001_1510306748
 
 ![A screenshot of the Telekom website showing my phone number.](https://github.com/frogg/Steal-Phone-Number/raw/master/telekom_website.png)
+
+## Suggested Solution
+Telekom shoudl top logging me in automatically. Users don't expect to be logged in without entereing credentials. Only when I enter my user ID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
