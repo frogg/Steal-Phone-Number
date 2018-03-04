@@ -5,7 +5,7 @@ This is an example app showing a potential attack to steal the user's phone numb
 This is a research project! Do not use in production!
 
 ## How to use
-Please disconnect form WiFi in order to execute the attack.
+Please disconnect from WiFi in order to execute the attack.
 Right now, this is only implemented with my service provider (Deutsche Telekom, Germany). Other providers seem to have similar privacy issues, though (feel free to submit a PR).
 
 ## How does it work?
