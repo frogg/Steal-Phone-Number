@@ -12,9 +12,12 @@
 		51521419204C45F10038B358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51521417204C45F10038B358 /* Main.storyboard */; };
 		5152141B204C45F10038B358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5152141A204C45F10038B358 /* Assets.xcassets */; };
 		5152141E204C45F10038B358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5152141C204C45F10038B358 /* LaunchScreen.storyboard */; };
+		51521427204C46290038B358 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51521426204C46290038B358 /* WebKit.framework */; };
+		860F62CDEA54BCF0CC1D795E /* Pods_Steal_Phone_Number.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494AF723832905C6F343D01F /* Pods_Steal_Phone_Number.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		494AF723832905C6F343D01F /* Pods_Steal_Phone_Number.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Steal_Phone_Number.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51521410204C45F10038B358 /* Steal Phone Number.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Steal Phone Number.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51521413204C45F10038B358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51521415204C45F10038B358 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		5152141A204C45F10038B358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5152141D204C45F10038B358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5152141F204C45F10038B358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51521426204C46290038B358 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B94D9188C52479BE4AB8004A /* Pods-Steal Phone Number.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steal Phone Number.release.xcconfig"; path = "Pods/Target Support Files/Pods-Steal Phone Number/Pods-Steal Phone Number.release.xcconfig"; sourceTree = "<group>"; };
+		FEFD91585F9F2DE4ED8F6AC3 /* Pods-Steal Phone Number.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Steal Phone Number.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Steal Phone Number/Pods-Steal Phone Number.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51521427204C46290038B358 /* WebKit.framework in Frameworks */,
+				860F62CDEA54BCF0CC1D795E /* Pods_Steal_Phone_Number.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,8 @@
 			children = (
 				51521412204C45F10038B358 /* Steal Phone Number */,
 				51521411204C45F10038B358 /* Products */,
+				51521425204C46290038B358 /* Frameworks */,
+				F93B582C63CE6B0474D087D2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +74,24 @@
 			path = "Steal Phone Number";
 			sourceTree = "<group>";
 		};
+		51521425204C46290038B358 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51521426204C46290038B358 /* WebKit.framework */,
+				494AF723832905C6F343D01F /* Pods_Steal_Phone_Number.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F93B582C63CE6B0474D087D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEFD91585F9F2DE4ED8F6AC3 /* Pods-Steal Phone Number.debug.xcconfig */,
+				B94D9188C52479BE4AB8004A /* Pods-Steal Phone Number.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +99,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51521422204C45F10038B358 /* Build configuration list for PBXNativeTarget "Steal Phone Number" */;
 			buildPhases = (
+				9AC9EB941BA810188705B2B7 /* [CP] Check Pods Manifest.lock */,
 				5152140C204C45F10038B358 /* Sources */,
 				5152140D204C45F10038B358 /* Frameworks */,
 				5152140E204C45F10038B358 /* Resources */,
+				62A69B67DCCAE518C1987A13 /* [CP] Embed Pods Frameworks */,
+				A66F606A022CEC70CE11F923 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +161,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62A69B67DCCAE518C1987A13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Steal Phone Number/Pods-Steal Phone Number-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Steal Phone Number/Pods-Steal Phone Number-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AC9EB941BA810188705B2B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Steal Phone Number-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A66F606A022CEC70CE11F923 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Steal Phone Number/Pods-Steal Phone Number-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5152140C204C45F10038B358 /* Sources */ = {
@@ -272,6 +357,7 @@
 		};
 		51521423204C45F10038B358 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEFD91585F9F2DE4ED8F6AC3 /* Pods-Steal Phone Number.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		51521424204C45F10038B358 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B94D9188C52479BE4AB8004A /* Pods-Steal Phone Number.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
