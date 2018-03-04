@@ -21,7 +21,7 @@ This is why they automatically "sign me in". My script just grabs the informatio
 ![A screenshot of the Telekom website showing my phone number.](https://github.com/frogg/Steal-Phone-Number/raw/master/telekom_website.png)
 
 ## Suggested Solution
-Telekom shoudl top logging me in automatically. Users don't expect to be logged in without entereing credentials. Only when I enter my user ID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
+Telekom should stop logging me in automatically. Users don't expect to be logged in without entereing credentials. Only when I enter my user ID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
 
 ## Also, please stop advertising this as a feature.
 It's not a feature. It's a bug.
