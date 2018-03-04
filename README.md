@@ -22,3 +22,7 @@ This is why they automatically "sign me in". My script just grabs the informatio
 
 ## Suggested Solution
 Telekom shoudl top logging me in automatically. Users don't expect to be logged in without entereing credentials. Only when I enter my user ID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
+
+## Also, please stop advertising this as a feature.
+It's not a feature. It's a bug.
+![Advertisement for auto login on the telekom website.](https://raw.githubusercontent.com/frogg/Steal-Phone-Number/master/advertising.png)
