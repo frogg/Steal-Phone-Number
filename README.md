@@ -25,4 +25,4 @@ Telekom shoudl top logging me in automatically. Users don't expect to be logged 
 
 ## Also, please stop advertising this as a feature.
 It's not a feature. It's a bug.
-![Advertisement for auto login on the telekom website.](https://raw.githubusercontent.com/frogg/Steal-Phone-Number/master/advertising.png)
+![Advertisement for auto login on the telekom website.](https://github.com/frogg/Steal-Phone-Number/raw/master/telekom_website_banner.png)
