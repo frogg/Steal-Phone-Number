@@ -25,10 +25,10 @@ It's not a feature. It's a bug.
 ![Advertisement for auto login on the telekom website.](https://github.com/frogg/Steal-Phone-Number/raw/master/telekom_website_banner.png)
 
 # Use Cases
-We can defnitely assume that evil apps like Facebook and Uber use this flaw already.
+We can definitely assume that evil apps like Facebook and Uber use this flaw already.
 - The obvious use case is of course to access the user's phone number.
 - With this information evil apps can track users even better. They can track between different apps, after re-installs and even if you switch your device.
 
 # What's Next?
-- Telekom should stop signing me in automatically. Users don't expect to be logged in without entereing credentials. Only when I enter my UserID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
-- Apple should give users more transparancy what kind of data apps are transmitting to their backend. Users should be able to block certain network requests or completely disable network requests for a specific app.
+- Telekom should stop signing me in automatically. Users don't expect to be logged in without entering credentials. Only when I enter my UserID & password I am aware that personal information will be shown on the website. This would also prevent attacks like this.
+- Apple should give users more transparency what kind of data apps are transmitting to their backend. Users should be able to block certain network requests or completely disable network requests for a specific app.
